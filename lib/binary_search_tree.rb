@@ -8,8 +8,11 @@ class BinarySearchTree
   end
 
   def insert(score, title)
-    if @first_node.score == nil || (score > @first_node.score && @first_node.right_link == nil)
-      @first_node.right_link = Node.new(score, title)
+    if score < 0 || score > 100
+      exit
+    else
+    if @first_node.score == nil
+      next_link = @first_node.right_link = Node.new(score, title)
     else
       next_link = @first_link.right_link
       until next_link.score < score
@@ -19,5 +22,7 @@ class BinarySearchTree
     end
     next_link.score
   end
+end
+
 
 end

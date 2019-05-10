@@ -30,5 +30,14 @@ RSpec.describe 'tree class' do
     expect(node2).to eq(16)
   end
 
+  it 'checks for scores before entering' do
+    tree = BinarySearchTree.new
+    node1 = tree.insert(61, "Bill & Ted's Excellent Adventure")
+    node2 = tree.insert(161, "Johnny English")
 
+    expect(node1).to eq(61)
+    expect(node2).to_not eq(161)
+  end
+
+  it 'can check for the presence of the score'
 end
